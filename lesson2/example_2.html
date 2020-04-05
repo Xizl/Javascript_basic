@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        let a = 2;
+        let x = 1 + (a *= 2);
+        alert(a);
+        //а будет равно четырем, т.к. форма записи a *= 2 по сути означает:
+        //a = a * 2
+        alert(x);
+        //соответсвенно здесь x будет равен 5, т.к. 1 + 4 = 5
+        //(честно говоря я думал, что конструкция a *= 2 вернет true, т.к. финал здесь операция присваения.)
+    </script>
+</body>
+</html>

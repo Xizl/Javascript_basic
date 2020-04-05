@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        const min = -100;
+        const max = 100;
+
+        let a = parseInt(Math.random() * (max - min) + min);
+        let b = parseInt(Math.random() * (max - min) + min);
+
+        if ((a >= 0) && (b >= 0)) {
+            alert("Оба числа положительные. Их разность: " + (a - b));
+        }
+
+        if ((a < 0) && (b < 0))
+            alert("Оба числа отрицательные. Их произведение: " + (a * b));
+
+        let ifFirstPositive = a >= 0;
+        let ifSecondPositive = b >=0;
+
+        //if a and b have different signs
+        if (((ifFirstPositive == true) && (ifSecondPositive == false)) || 
+            ((ifFirstPositive == false) && (ifSecondPositive == true)))
+            alert("Одно число положительное, а другое - отрицательное. Выводи их сумму: " + (a +b));
+
+    </script>
+</body>
+</html>
