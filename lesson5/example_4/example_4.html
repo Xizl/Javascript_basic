@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="products-box">
+        <div class="product">
+            <div>Product 1</div>
+            <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut reprehenderit maiores quasi maxime hic deleniti esse ea, aut sapiente aliquam magni ipsa, accusantium inventore corporis laboriosam atque quae fugiat impedit?</div>
+            <img src="img/1657.png" alt="product image"><br>
+            <button>Подробнее</button>
+        </div>
+        <div class="product">
+            <div>Product 2</div>
+            <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis nobis necessitatibus, error, minus maxime quia tempore ullam dignissimos rerum tenetur, neque deserunt minima aperiam possimus illo dolor ad? Aliquam, saepe!</div>
+            <img src="img/1877.png" alt="product image"><br>
+            <button>Подробнее</button>
+        </div>
+        <div class="product">
+            <div>Product 3</div>
+            <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste error illo molestias at sed temporibus expedita rem praesentium laboriosam dolores quam optio, nulla natus nobis animi quis vitae cum aut.</div>
+            <img src="img/1937.png" alt="product image"><br>
+            <button>Подробнее</button>
+        </div>        
+    </section>
+    <script>
+        'use strict';
+
+        let buttons = document.querySelectorAll('button');
+
+        function productButtonClick(event) {
+
+            let button = event.target;
+
+            if (button.innerText === 'Подробнее') {
+                button.innerText = 'отмена';
+                let parent = button.parentNode;
+
+                let img = parent.querySelector('img');
+                img.style.display = 'none';
+
+                let desc = parent.querySelector('.desc');
+                desc.style.display = 'block';
+            } else {
+                button.innerText = 'Подробнее';
+                let parent = button.parentNode;
+
+                let img = parent.querySelector('img');
+                img.style.display = 'inherit';
+
+                let desc = parent.querySelector('.desc');
+                desc.style.display = 'none';
+            }         
+
+        }
+
+        buttons.forEach(function(button) {
+            button.addEventListener('click', productButtonClick);
+        })
+
+    </script>
+</body>
+</html>

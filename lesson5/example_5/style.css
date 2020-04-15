@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.chess-board {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (100px)[8];
+      grid-template-columns: repeat(8, 100px);
+  -ms-grid-rows: (100px)[8];
+      grid-template-rows: repeat(8, 100px);
+}
+
+.black {
+  background-color: grey;
+}
+
+.white {
+  background-color: #fff;
+}
+/*# sourceMappingURL=style.css.map */

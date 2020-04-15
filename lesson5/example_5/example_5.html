@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Chess</title>
+</head>
+<body>
+    <div class="chess-board">
+
+    </div>
+
+    <script>
+        'use strict';
+
+        let white = true;
+
+        let cellsTitles = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+        let chessBoard = document.querySelector('.chess-board');
+
+        //из-за того, что клетка A1 должна быть в левом нижнем углу (и дожлна быть черной) доску я генерирую немного
+        //неочевидным образом - задом наперед.
+        for (let i = 8; i > 0; i--) {
+            cellsTitles.forEach(function(cellTitle) {
+                
+                let cell = document.createElement('div');
+                cell.setAttribute('data-X', cellTitle);
+                cell.setAttribute('data-Y', i);
+                cell.classList.add('cell');
+
+                if(white) {
+                    cell.classList.add('white');
+                } else {
+                    cell.classList.add('black');
+                }
+
+                white = !white;
+
+                chessBoard.appendChild(cell);
+            });
+            white = !white;
+        }
+
+    </script>
+</body>
+</html>
