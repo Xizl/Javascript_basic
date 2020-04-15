@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        function Product(name, price) {
+            this.name = name;
+            this.price = price;
+        }
+
+        Product.prototype.makeDiscount = function() {
+            this.price *= 0.85;
+        }
+
+
+        //Не понимаю, почему этот вариант не работает
+        /*Product.prototype.makeDiscount = () => {
+            this.price *= 0.85;
+        }*/
+
+        let product = new Product('Alex', 100);
+        console.log(product);
+
+        product.makeDiscount();
+        console.log(product);
+
+        //работает неправильно при первом запуске (оба вызова console.log возвращают цену в 85).
+
+    </script>
+</body>
+
+</html>

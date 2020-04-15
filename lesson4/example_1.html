@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+
+        function NumObj(units = 0, tens = 0, hundreds = 0) {
+            this.units = units;
+            this.tens = tens;
+            this.hundreds = hundreds;
+        }
+
+        function parseNumber(number, arr) {
+            let remOfDivision = number % 10;
+            if (remOfDivision === 0) return;
+            arr.push(remOfDivision);
+            parseNumber((number - remOfDivision) / 10, arr);
+        }
+
+        function convertNumberToObjext(number) {
+
+            let arr = [];
+            parseNumber(number, arr);            
+            return new NumObj(arr[0], arr[1], arr[2]); //нормально ли тут передавать undefined, обращаясь за пределы массива?
+        }
+
+        
+        let numObj = {};
+        let number = +prompt("Введите целое число в диапазоне от 0 до 999:");        
+
+        if (isNaN(number) || !Number.isInteger(number) || number < 0 || number > 999) {
+            console.log("Ошибка ввода числа!");
+            console.log("Возвращаем пустой объект");
+        } else {
+            numObj = convertNumberToObjext(number);
+        }
+        
+        console.log(numObj);
+           
+        
+
+        
+    </script>
+</body>
+
+</html>

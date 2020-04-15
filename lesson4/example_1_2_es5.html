@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use script';
+
+        function Post(author, date, text) {
+            this.author = author;
+            this.date = date;
+            this.text = text;
+        }
+
+        Post.prototype.edit = function(text) {
+            this.text = text;
+        }       
+
+        function AttachedPost (author, text, date) {
+            Post.call(this, author, text, date);
+            this.highlited = false;
+        }
+
+        AttachedPost.prototype = Object.create(Post.prototype);
+        AttachedPost.prototype.constructor = AttachedPost;
+
+        AttachedPost.prototype.makeTextHighlighted = function () {
+            this.highlited = true;
+        }
+
+        let post = new Post('Alex', '10.11.2020', 'some text');
+        console.log(post);
+        post.edit('another text');
+        console.log(post);
+
+        let attachedPost = new AttachedPost('Max', '01.02.2020', 'new text');
+        console.log(attachedPost);
+        attachedPost.edit('the very new text');
+        console.log(attachedPost);
+        attachedPost.makeTextHighlighted();
+        console.log(attachedPost);
+
+    </script>
+</body>
+</html>
