@@ -1,0 +1,211 @@
+@import variables_and_general_definitions
+@import header
+@import breadcrumb
+
+.main-content-container
+    display: flex
+    justify-content: space-between
+    margin-top: 60px
+
+.side-nav    
+    margin-right: 50px
+    &-details
+        width: 243px          
+        border-bottom: 1px solid #ebebeb        
+        margin-bottom: 18px        
+        &-summary
+            height: 37px  
+            font-size: 14px
+            font-weight: bold            
+            color: #6f6e6e
+            padding-left: 18px
+            line-height: 20px
+            text-transform: uppercase
+            list-style: none
+            border-left: 5px solid #ef5b70 
+            display: flex
+            align-items: center
+            &::-webkit-details-marker
+                display: none                       
+            &:hover
+                cursor: pointer
+                color: #ef5b70
+            &::after
+                content: '\f0d7'
+                font-family: FontAwesome
+                margin-left: auto
+        &[open] summary::after
+            content: '\f0d8'
+            font-family: FontAwesome            
+        &[open] summary
+            color: #ef5b70
+        &-ul
+            list-style: none
+        &-links            
+            font-size: 14px
+            color: #6f6e6e
+            line-height: 33px
+            padding-left: 18px
+
+%font-settings
+    color: #6f6e6e
+    line-height: 20px
+    font-size: 14px
+    
+.settings
+    height: 74px
+    display: flex
+    justify-content: space-between
+    &-h3
+        @extend %font-settings
+        font-weight: bold
+        text-transform: uppercase
+        margin-bottom: 24px
+
+.size-box
+    text-transform: uppercase
+    color: #6f6e6e
+    width: 236px  
+    form
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+    input[type="checkbox"]
+        border: 1px solid #ebebeb 
+        margin-right: 9px       
+    label
+
+.trending-box
+    width: 176px        
+    &-links
+        text-decoration: none
+        @extend %font-settings
+        line-height: 26px
+        &:not(:nth-of-type(3n+3)):after
+            content: " | "
+            color: #dfdfdf    
+
+%price-box-slider-thumb
+    appearance: none
+    width: 14px
+    height: 14px
+    border-radius: 50%
+    background: $color_auxiliary
+    border: 1px solid $color_auxiliary
+    cursor: pointer    
+
+.price-box
+    width: 263px
+    &-min-price
+        @extend %font-settings
+        line-height: 26px
+    &-max-price
+        @extend %font-settings
+        line-height: 26px
+        float: right
+    &-slider        
+        //-webkit-appearance: none
+        width: 100%
+        height: 6px
+        border-radius: 3px
+        background: #f0f0f0
+        outline: none
+        opacity: 0.7
+        -webkit-transition: .2s
+        transition: opacity .2s        
+        &:hover 
+            opacity: 1
+        &::-webkit-slider-thumb 
+            -webkit-appearance: none
+            @extend %price-box-slider-thumb
+            margin-top: -14px
+            box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d        
+        &::-moz-range-thumb 
+            @extend %price-box-slider-thumb              
+
+.sort
+    height: 50px
+    background-color: #f3f3f3
+    margin-bottom: 48px
+    margin-top: 42px
+    padding: 10px
+    display: flex
+    align-items: center
+    &-form-styles
+        font-size: 14px
+        font-family: 'Lato'
+        color: #6f6e6e
+        line-height: 26px       
+        height: 30px
+        background-color: #fff
+        border: none
+        padding: 0 10px        
+    form select
+        margin-left: -3px
+        margin-right: 10px
+
+.pagination-and-view-all
+    margin-bottom: 110px
+    display: flex
+    justify-content: space-between
+
+.pagination
+    border: 1px solid #ebebeb
+    border-radius: 3px
+    padding: auto 0
+    display: flex
+    align-items: center
+    &-ul
+        display: flex        
+        list-style: none             
+    &-li a
+        text-decoration: none
+        font-size: 16px        
+        color: #c4c4c4
+        line-height: 26px
+        padding: 9px 9px
+        &:hover
+           color: #ef5b70 
+    &-active>a
+        color: #ef5b70
+
+.view-all
+    height: 44px
+    width: 150px
+    font-size: 16px
+    font-weight: 300
+    color: #ef5b70
+    line-height: 26px
+    background-color: #fff
+    border: 1px solid #ef5b70
+    &:hover
+        background-color: #ef5b70
+        color: #fff
+
+.feature_box_container
+    @extend %feature_box_container
+    height: 341px
+    
+.feature_box      
+    display: flex 
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    &_img 
+        margin-bottom: 32px
+    &_text  
+        color: #fbfbfb 
+        text-align: center
+        &>p     
+            font-size: 14px
+            font-weight: 300    
+            line-height: 24px
+        &>h3 
+            margin-bottom: 16px    
+            font-size: 20px
+            font-weight: bold
+
+@import cards_style
+@import subscribe_and_footer
+
+.subscribe
+    margin-top: 0
