@@ -1,0 +1,57 @@
+
+.cards_section 
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    margin-bottom: 30px
+
+.card 
+    height: 379px
+    width: 261px    
+    margin-bottom: 30px      
+    &:hover 
+        box-shadow: 5px 5px 5px 0px #e1e1e1
+    &:hover>.card_img 
+        background-color: rgba(0,0,0,.7)
+        background-blend-mode: darken
+    &:hover>.card_img button
+        visibility: visible
+    &_img 
+        height: 280px    
+        display: flex
+        justify-content: center
+        align-items: center
+        background-repeat: no-repeat
+        background-position: center
+        background-color: #e9e9e9
+        &>button 
+            height: 39px
+            width: 130px   
+            background-color: transparent
+            font-size: 13px
+            font-weight: bold
+            color: #ffffff
+            border: 1px solid #ffffff
+            visibility: hidden
+            display: flex
+            align-items: center 
+            justify-content: center  
+        &>button>img 
+            margin-right: 5px
+
+    &_text 
+        background-color: white
+        text-align: left
+        padding-top: 18px
+        padding-left: 14px
+        font-size: 14px
+        color: #222222    
+        text-transform: uppercase
+        & a 
+            color: #222222
+        & span 
+            font-size: 16px    
+            color: $color_auxiliary
+
+.add_cart:hover 
+    box-shadow: 0 0 6px #fff
